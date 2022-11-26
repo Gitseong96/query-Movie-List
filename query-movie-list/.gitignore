@@ -7,7 +7,7 @@
 d.ts
 # testing
 /coverage
-
+/MocieList.tsx
 # production
 /build
 
