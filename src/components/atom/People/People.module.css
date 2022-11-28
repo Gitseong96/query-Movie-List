@@ -1,0 +1,9 @@
+.container {
+   display: flex;
+   margin-top: 10px;
+}
+
+.text {
+   width: 300px;
+   min-height: 50px;
+}
