@@ -3,16 +3,18 @@ import { useQuery } from '@tanstack/react-query';
 import Ranks from 'components/atom/Ranks/Ranks';
 import styles from './DayMovie.module.css';
 import { axiosGetDayMovieRanks } from '../../API';
-
+import { queryKeys } from 'Reacy-Query/queryKeys';
+import { useDayRanks } from 'Hooks/useDayMovieRank';
 function DayMovieRanks() {
-   const { data, status } = useQuery(['MoivesRank'], axiosGetDayMovieRanks);
+   const dayRanks = useDayRanks();
+   const { data, status } = dayRanks;
    if (status === 'loading') return <div>Loading....</div>;
    return (
       <div className={styles.container}>
-         <h1 className={styles.title}>{data.boxOfficeResult.boxofficeType}</h1>
-         <h2 className={styles.title}>{data.boxOfficeResult.showRange}</h2>
+         a<h1 className={styles.title}>{data?.boxOfficeResult.boxofficeType}</h1>
+         <h2 className={styles.title}>{data?.boxOfficeResult.showRange}</h2>
          <div>
-            {data.boxOfficeResult.dailyBoxOfficeList.map((movie: any) => {
+            {data?.boxOfficeResult.dailyBoxOfficeList.map((movie: any) => {
                return (
                   <Ranks
                      key={movie.rank}
