@@ -1,13 +1,9 @@
-import React from 'react';
-import axios from 'axios';
-import { useQueryClient, useQuery } from '@tanstack/react-query';
-// import { Movies } from 'API';
-// import { axiosGetWeekMoviesRanks } from 'API';
+import { useWeekRanks } from 'Hooks/useWeekMovieRanks';
 import Ranks from 'components/atom/Ranks/Ranks';
-import { axiosGetWeekMoviesRanks } from '../../API';
 
 function WeekMovieRanks() {
-   const { data, status } = useQuery(['MoivesWeekRank'], axiosGetWeekMoviesRanks);
+   const weekRanks = useWeekRanks();
+   const { data, status } = weekRanks;
 
    if (status === 'loading') return <div>Loading....</div>;
    return (

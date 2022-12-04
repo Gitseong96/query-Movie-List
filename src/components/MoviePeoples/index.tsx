@@ -1,11 +1,9 @@
-/* eslint-disable react/jsx-key */
-import React from 'react';
-import { useQuery } from '@tanstack/react-query';
 import People from 'components/atom/People/People';
-import { axiosGetMoviePeople } from 'API';
-
+import { useMoviePeople } from 'Hooks/useMoviePeople';
 function MoviePeople() {
-   const { data, status } = useQuery(['MoviePeople'], axiosGetMoviePeople);
+   const PeopleData = useMoviePeople();
+   const { data, status } = PeopleData;
+
    if (status === 'loading') return <div>Loading....</div>;
 
    return (

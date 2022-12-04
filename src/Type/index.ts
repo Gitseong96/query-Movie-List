@@ -39,4 +39,4 @@ interface BoxOfficeWeek {
    showRange: string;
    weeklyBoxOfficeList: [];
 }
-export { MovieListConfig, PeopleConfig, MakerConfig, DayConfig, WeekConfig };
+export { MovieListConfig, BoxOfficeDay, PeopleConfig, MakerConfig, DayConfig, WeekConfig };

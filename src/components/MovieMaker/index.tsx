@@ -1,12 +1,11 @@
-import { useQueryClient, useQuery } from '@tanstack/react-query';
-// import { Movies } from 'API';
 import Maker from 'components/atom/Maker/Maker';
-import { axiosGetMovieMaker } from '../../API';
-
+import { useMovieMaker } from 'Hooks/useMovieMaker';
 function MovieMaker() {
-   const { data, status } = useQuery(['MovieMaker'], axiosGetMovieMaker);
+   const movieMaker = useMovieMaker();
+   const { data, status } = movieMaker;
+
    if (status === 'loading') return <div>Loading....</div>;
-   // console.log(data.companyListResult.companyList);
+
    return (
       <>
          <div>{data.companyListResult.totCnt}</div>;

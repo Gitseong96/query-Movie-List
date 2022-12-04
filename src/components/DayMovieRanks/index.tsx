@@ -1,9 +1,5 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import { useQuery } from '@tanstack/react-query';
 import Ranks from 'components/atom/Ranks/Ranks';
 import styles from './DayMovie.module.css';
-import { axiosGetDayMovieRanks } from '../../API';
-import { queryKeys } from 'Reacy-Query/queryKeys';
 import { useDayRanks } from 'Hooks/useDayMovieRank';
 function DayMovieRanks() {
    const dayRanks = useDayRanks();

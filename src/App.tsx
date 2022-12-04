@@ -3,24 +3,25 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import DayMovieRanks from 'components/DayMovieRanks';
 import MoviePeople from 'components/MoviePeoples';
 import MovieMaker from 'components/MovieMaker';
-import MovieLists from 'components/MovieList';
+import MovieList from 'components/MovieList';
 import WeekMovieRanks from 'components/WeekMoveRanks';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-const queryClient = new QueryClient();
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './Reacy-Query/queryClient';
+import './App.css';
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <MovieLists />
-      {/* <MovieList /> */}
-      {/* <DayMovieRanks /> */}
-      {/* <MoviePeople /> */}
-      {/* <MovieMaker /> */}
-      {/* <WeekMovieRanks /> */}
-      <ReactQueryDevtools />
-    </QueryClientProvider>
-  );
+   return (
+      <QueryClientProvider client={queryClient}>
+         <div className="AppLayout">
+            {/* <MovieList /> */}
+            <DayMovieRanks />
+            {/* <MoviePeople /> */}
+            {/* <MovieMaker /> */}
+            {/* <WeekMovieRanks /> */}
+            <ReactQueryDevtools />
+         </div>
+      </QueryClientProvider>
+   );
 }
 
 export default App;
