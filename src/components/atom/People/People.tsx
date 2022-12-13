@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/function-component-definition */
 import React from 'react';
 import style from './People.module.css';
 
@@ -19,3 +17,5 @@ const People: React.FC<PeopleProps> = props => {
 };
 
 export default People;
+
+// people은 페이지네이션 구현

@@ -1,16 +1,15 @@
 {
-    "singleQuote": true, 
-    "semi": true,
-    "useTabs": false,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "printWidth": 80,
-    "arrowParens": "always",
-    "orderedImports": true,
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "editor.fontSize": 10,
-    "editor.cursorStyle": "block",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    
-  }
+   "singleQuote": true,
+   "semi": true,
+   "useTabs": false,
+   "tabWidth": 2,
+   "trailingComma": "all",
+   "printWidth": 80,
+   "arrowParens": "always",
+   "orderedImports": true,
+   "bracketSpacing": true,
+   "jsxBracketSameLine": false,
+   "editor.fontSize": 10,
+   // "editor.cursorStyle": "block",
+   "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

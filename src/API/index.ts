@@ -32,11 +32,11 @@ const Movies = {
    getWeekMoviesRanks: (): Promise<WeekConfig> =>
       MovieRequest.get(`/boxoffice/searchWeeklyBoxOfficeList.json?key=${MOVIE_API}&targetDt=${targetDt}`),
    getMovieList: (): Promise<MovieListConfig> =>
-      MovieRequest.get(`/movie/searchMovieList.json?key=${MOVIE_API}&itemPerPage=${100}`), // 무한 스크롤 구현 ㄱ
+      MovieRequest.get(`/movie/searchMovieList.json?key=${MOVIE_API}&itemPerPage=${10}`), // 무한 스크롤 구현 ㄱ
    getMovieMaker: (): Promise<MakerConfig> =>
-      MovieRequest.get(`/company/searchCompanyList.json?key=${MOVIE_API}&itemPerPage=${100}`), // 무한 스크롤 구현 ㄱ
-   getMoviePeople: (): Promise<PeopleConfig> =>
-      MovieRequest.get(`/people/searchPeopleList.json?key=${MOVIE_API}&itemPerPage=${100}`), // 무한스크롤 구현 ㄱ
+      MovieRequest.get(`/company/searchCompanyList.json?key=${MOVIE_API}&itemPerPage=${10}`), // 무한 스크롤 구현 ㄱ
+   getMoviePeople: (pagenum: number): Promise<PeopleConfig> =>
+      MovieRequest.get(`/people/searchPeopleList.json?key=${MOVIE_API}&itemPerPage=${10}&curPage=${pagenum}`), // 무한스크롤 구현 ㄱ
 };
 
 const axiosGetMovieList = async () => {
@@ -57,8 +57,8 @@ const axiosGetMovieMaker = async () => {
    return data;
    // 여기서 companyCd를 통해서 영화사 세부 데이터를 확인 가능
 };
-const axiosGetMoviePeople = async () => {
-   const data = await Movies.getMoviePeople();
+const axiosGetMoviePeople = async (pagenum: number) => {
+   const data = await Movies.getMoviePeople(pagenum);
    return data;
    // peopleCd 를 통해서 영화인 데이터를 자세히 볼수 있다
 };

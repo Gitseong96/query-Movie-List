@@ -1,42 +1,49 @@
 interface MovieListConfig {
-   movieListResult: MovieList;
+  movieListResult: MovieList;
 }
 interface MovieList {
-   totCnt: string;
-   movieList: [];
+  totCnt: string;
+  movieList: [];
 }
 
 interface PeopleConfig {
-   peopleListResult: Peopleaa;
+  peopleListResult: Peopleaa;
 }
 interface Peopleaa {
-   totCnt: string;
-   peopleList: [];
+  totCnt: string;
+  peopleList: [];
 }
 
 interface MakerConfig {
-   companyListResult: Makeaa;
+  companyListResult: Makeaa;
 }
 interface Makeaa {
-   totCnt: string;
-   companyList: [];
+  totCnt: string;
+  companyList: [];
 }
 
 interface DayConfig {
-   boxOfficeResult: BoxOfficeDay;
+  boxOfficeResult: BoxOfficeDay;
 }
 interface BoxOfficeDay {
-   boxofficeType: string;
-   showRange: string;
-   dailyBoxOfficeList: [];
+  boxofficeType: string;
+  showRange: string;
+  dailyBoxOfficeList: [];
 }
 
 interface WeekConfig {
-   boxOfficeResult: BoxOfficeWeek;
+  boxOfficeResult: BoxOfficeWeek;
 }
 interface BoxOfficeWeek {
-   boxofficeType: string;
-   showRange: string;
-   weeklyBoxOfficeList: [];
+  boxofficeType: string;
+  showRange: string;
+  weeklyBoxOfficeList: [];
 }
-export { MovieListConfig, BoxOfficeDay, PeopleConfig, MakerConfig, DayConfig, WeekConfig };
+export {
+  MovieListConfig,
+  BoxOfficeDay,
+  PeopleConfig,
+  MakerConfig,
+  DayConfig,
+  WeekConfig,
+};
