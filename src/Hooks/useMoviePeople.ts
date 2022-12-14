@@ -10,22 +10,22 @@ interface UseMoviePeople {
    status: string;
    currentPage: number;
    setCurrentPage: Dispatch<SetStateAction<number>>;
-   pageNum: number[];
-   setPageNum: Dispatch<SetStateAction<number[]>>;
-   pageStr: string;
-   setPageStr: Dispatch<SetStateAction<string>>;
+   pageNum?: number[];
+   setPageNum?: Dispatch<SetStateAction<number[]>>;
+   pageStr?: string;
+   setPageStr?: Dispatch<SetStateAction<string>>;
 }
 export const useMoviePeople = (): UseMoviePeople => {
    const [currentPage, setCurrentPage] = useState(1);
-   const [pageNum, setPageNum] = useState([1, 2, 3, 4, 5]);
-   const [pageStr, setPageStr] = useState('처음');
+   //  const [pageNum, setPageNum] = useState([1, 2, 3, 4, 5]);
+   //  const [pageStr, setPageStr] = useState('처음');
    const queryClient = useQueryClient();
    useEffect(() => {
       const nextPage = currentPage + 1;
       queryClient.prefetchQuery([queryKeys.moviePeoples, nextPage], () => axiosGetMoviePeople(nextPage));
-   }, [currentPage]);
+   }, [currentPage, queryClient]);
 
    const { data, status } = useQuery([queryKeys.moviePeoples, currentPage], () => axiosGetMoviePeople(currentPage));
 
-   return { data, status, currentPage, setCurrentPage, pageNum, setPageNum, pageStr, setPageStr };
+   return { data, status, currentPage, setCurrentPage };
 };
