@@ -1,5 +1,5 @@
-import Maker from 'components/atom/Maker/Maker';
-import { useMovieMaker } from 'Hooks/useMovieMaker';
+import Maker from 'components/atom/Maker';
+import { useMovieMaker } from 'components/MovieMaker/useMovieMaker';
 function MovieMaker() {
    const movieMaker = useMovieMaker();
    const { data, status } = movieMaker;

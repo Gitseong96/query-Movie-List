@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './People.module.css';
 
 interface PeopleProps {
    peopleNm: string;
@@ -8,10 +7,10 @@ interface PeopleProps {
 }
 const People: React.FC<PeopleProps> = props => {
    return (
-      <div className={style.container}>
-         <div className={style.text}>{props.peopleNm}</div>
-         <div className={style.text}>{props.repRoleNm}</div>
-         <div className={style.text}>{props.filmoNames}</div>
+      <div>
+         <div></div>
+         <div>{props.repRoleNm}</div>
+         <div>{props.filmoNames}</div>
       </div>
    );
 };

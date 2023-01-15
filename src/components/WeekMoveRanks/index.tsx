@@ -1,5 +1,5 @@
-import { useWeekRanks } from 'Hooks/useWeekMovieRanks';
-import Ranks from 'components/atom/Ranks/Ranks';
+import { useWeekRanks } from 'components/WeekMoveRanks/useWeekMovieRanks';
+import Ranks from 'components/atom/Ranks';
 
 function WeekMovieRanks() {
    const weekRanks = useWeekRanks();

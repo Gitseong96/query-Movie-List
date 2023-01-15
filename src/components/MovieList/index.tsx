@@ -1,4 +1,4 @@
-import { useMovieList } from 'Hooks/useMovieList';
+import { useMovieList } from 'components/MovieList/useMovieList';
 function MoiveList() {
    const movieList = useMovieList();
    const { data, status } = movieList;

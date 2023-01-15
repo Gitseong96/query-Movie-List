@@ -1,5 +1,5 @@
-import People from 'components/atom/People/People';
-import { useMoviePeople } from 'Hooks/useMoviePeople';
+import People from 'components/atom/People';
+import { useMoviePeople } from 'components/MoviePeoples/useMoviePeople';
 function MoviePeople() {
    const PeopleData = useMoviePeople();
    const { data, status, currentPage, setCurrentPage, pageStr, setPageStr } = PeopleData;
