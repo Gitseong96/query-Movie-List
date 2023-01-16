@@ -16,49 +16,49 @@ const baseUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/`;
 // const targetDt = TargetKey();
 const targetDt = '20221201';
 
-const instance = axios.create({
+const instanceMovie = axios.create({
    baseURL: 'https://www.kobis.or.kr/kobisopenapi/webservice/rest',
 });
 
 const responseBody = (response: AxiosResponse) => response.data;
 
-const MovieRequest = {
-   get: (url: string) => instance.get<AxiosRequestConfig>(url).then(responseBody),
+const Request = {
+   getMovie: (url: string) => instanceMovie.get<AxiosRequestConfig>(url).then(responseBody),
 };
 
-const Movies = {
+const Api = {
    getDayMoviesRanks: (): Promise<DayConfig> =>
-      MovieRequest.get(`/boxoffice/searchDailyBoxOfficeList.json?key=${MOVIE_API}&targetDt=${targetDt}`),
+      Request.getMovie(`/boxoffice/searchDailyBoxOfficeList.json?key=${MOVIE_API}&targetDt=${targetDt}`),
    getWeekMoviesRanks: (): Promise<WeekConfig> =>
-      MovieRequest.get(`/boxoffice/searchWeeklyBoxOfficeList.json?key=${MOVIE_API}&targetDt=${targetDt}`),
+      Request.getMovie(`/boxoffice/searchWeeklyBoxOfficeList.json?key=${MOVIE_API}&targetDt=${targetDt}`),
    getMovieList: (): Promise<MovieListConfig> =>
-      MovieRequest.get(`/movie/searchMovieList.json?key=${MOVIE_API}&itemPerPage=${10}`), // 무한 스크롤 구현 ㄱ
+      Request.getMovie(`/movie/searchMovieList.json?key=${MOVIE_API}&itemPerPage=${10}`),
    getMovieMaker: (): Promise<MakerConfig> =>
-      MovieRequest.get(`/company/searchCompanyList.json?key=${MOVIE_API}&itemPerPage=${10}`), // 무한 스크롤 구현 ㄱ
+      Request.getMovie(`/company/searchCompanyList.json?key=${MOVIE_API}&itemPerPage=${10}`),
    getMoviePeople: (pagenum: number): Promise<PeopleConfig> =>
-      MovieRequest.get(`/people/searchPeopleList.json?key=${MOVIE_API}&itemPerPage=${10}&curPage=${pagenum}`), // 무한스크롤 구현 ㄱ
+      Request.getMovie(`/people/searchPeopleList.json?key=${MOVIE_API}&itemPerPage=${10}&curPage=${pagenum}`),
 };
 
 const axiosGetMovieList = async () => {
-   const data = await Movies.getMovieList();
+   const data = await Api.getMovieList();
    return data;
    // 여기 리턴값중 movieCd를 통해서 상세 데이터를 가져올수 있다
 };
 const axiosGetDayMovieRanks = async () => {
-   const data = await Movies.getDayMoviesRanks();
+   const data = await Api.getDayMoviesRanks();
    return data;
 };
 const axiosGetWeekMoviesRanks = async () => {
-   const data = await Movies.getWeekMoviesRanks();
+   const data = await Api.getWeekMoviesRanks();
    return data;
 };
 const axiosGetMovieMaker = async () => {
-   const data = await Movies.getMovieMaker();
+   const data = await Api.getMovieMaker();
    return data;
    // 여기서 companyCd를 통해서 영화사 세부 데이터를 확인 가능
 };
 const axiosGetMoviePeople = async (pagenum: number) => {
-   const data = await Movies.getMoviePeople(pagenum);
+   const data = await Api.getMoviePeople(pagenum);
    return data;
    // peopleCd 를 통해서 영화인 데이터를 자세히 볼수 있다
 };
