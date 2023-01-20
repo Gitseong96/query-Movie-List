@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { MovieListConfig, PeopleConfig, MakerConfig, DayConfig, WeekConfig } from 'Type';
+import { MovieListConfig, PeopleConfig, MakerConfig, DayConfig, WeekConfig, BusConfig } from 'Type';
 
 // const TargetDate = new Date();
 // const year = TargetDate.getFullYear();
@@ -12,18 +12,23 @@ import { MovieListConfig, PeopleConfig, MakerConfig, DayConfig, WeekConfig } fro
 // searchDailyBoxOfficeList.json?key=bbc4c623fc0a820e7436db118bc1d95c&targetDt=20221123
 
 const MOVIE_API = 'bbc4c623fc0a820e7436db118bc1d95c';
+const open_API = 'kjHcfFZ4qKx5Ie3UIJLQgWpRvMUtK3oAZu4VTDhUGA9%2FNnNWnnAw9oAvLMtKIDWUftzrkzytDkgD6A%2Fx0aB2IA%3D%3D';
 const baseUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/`;
-// const targetDt = TargetKey();
+
 const targetDt = '20221201';
 
 const instanceMovie = axios.create({
    baseURL: 'https://www.kobis.or.kr/kobisopenapi/webservice/rest',
+});
+const instanceOpenAPI = axios.create({
+   baseURL: 'https://api.odcloud.kr/api',
 });
 
 const responseBody = (response: AxiosResponse) => response.data;
 
 const Request = {
    getMovie: (url: string) => instanceMovie.get<AxiosRequestConfig>(url).then(responseBody),
+   getOpenAPI: (url: string) => instanceOpenAPI.get<AxiosRequestConfig>(url).then(responseBody),
 };
 
 const Api = {
@@ -37,8 +42,15 @@ const Api = {
       Request.getMovie(`/company/searchCompanyList.json?key=${MOVIE_API}&itemPerPage=${10}`),
    getMoviePeople: (pagenum: number): Promise<PeopleConfig> =>
       Request.getMovie(`/people/searchPeopleList.json?key=${MOVIE_API}&itemPerPage=${10}&curPage=${pagenum}`),
+   getBusInfoGangwon_do: (): Promise<BusConfig> =>
+      Request.getOpenAPI(
+         `15074171/v1/uddi:ca48a94e-07df-4263-9850-8500c51fb995?page=1&perPage=10&serviceKey=${open_API}`,
+      ),
 };
-
+export const axiosGetBusInfoGangwon_do = async () => {
+   const data = await Api.getBusInfoGangwon_do();
+   return data;
+};
 const axiosGetMovieList = async () => {
    const data = await Api.getMovieList();
    return data;

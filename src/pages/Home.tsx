@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import DayMovieRanks from 'components/DayMovieRanks';
 import WeekMovieRanks from 'components/WeekMoveRanks';
+import { useBuseData } from 'components/WeekMoveRanks/useWeekMovieRanks';
 const Home = () => {
    return (
       <>

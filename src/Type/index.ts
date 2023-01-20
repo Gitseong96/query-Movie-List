@@ -39,5 +39,22 @@ interface BoxOfficeWeek {
    showRange: string;
    weeklyBoxOfficeList: [];
 }
+interface BusConfig {
+   currentCount: number;
+   data: any[];
+   matchCount: number;
+   page: number;
+   perPage: number;
+   totalCount: number;
+}
 
-export { MovieListConfig, BoxOfficeDay, PeopleConfig, MakerConfig, DayConfig, WeekConfig };
+interface BusData {
+   순위: string;
+   승차: string;
+   정류장명: string;
+   지역: string;
+   총이용인원: string;
+   하차: string;
+}
+
+export { BusConfig, MovieListConfig, BoxOfficeDay, PeopleConfig, MakerConfig, DayConfig, WeekConfig };

@@ -4,6 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './Reacy-Query/queryClient';
 import './App.css';
 import Home from 'pages/Home';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import GlobalStyle from 'style/globalStyle';
 function App() {
    return (
@@ -16,6 +17,7 @@ function App() {
                   <Route path="/Ranks" element={<MovieRanksPage />}></Route>
                </Routes>
             </BrowserRouter>
+            <ReactQueryDevtools />
          </div>
       </QueryClientProvider>
    );
