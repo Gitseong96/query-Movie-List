@@ -46,15 +46,46 @@ const Api = {
       Request.getOpenAPI(
          `15074171/v1/uddi:ca48a94e-07df-4263-9850-8500c51fb995?page=1&perPage=10&serviceKey=${open_API}`,
       ),
+   getBusInfGGD: (): Promise<BusConfig> =>
+      Request.getOpenAPI(
+         `15074172/v1/uddi:53d87562-c5db-4b48-8081-8c1d26597492?page=1&perPage=10&serviceKey=${open_API}`,
+      ),
+   getBusInfoGSMD: (): Promise<BusConfig> =>
+      Request.getOpenAPI(
+         `15074175/v1/uddi:4e5820c0-1109-48db-8eb4-d41695c1a1b4?page=1&perPage=10&serviceKey=${open_API}`,
+      ),
+   getBusInfoD9: (): Promise<BusConfig> =>
+      Request.getOpenAPI(
+         `15074181/v1/uddi:a9279185-9ab2-4b78-93bb-bc7f6b03a261?page=1&perPage=10&serviceKey=${open_API}`,
+      ),
+   getBusInfoDS: (): Promise<BusConfig> =>
+      Request.getOpenAPI(
+         `15074183/v1/uddi:9fcb7e98-b00a-4721-976a-d963560f101c?page=1&perPage=10&serviceKey=${open_API}`,
+      ),
 };
-export const axiosGetBusInfoGangwon_do = async () => {
+const axiosGetBusInfoGGD = async () => {
+   const data = await Api.getBusInfGGD();
+   return data;
+};
+const axiosGetBusInfoGSMD = async () => {
+   const data = await Api.getBusInfoGSMD();
+   return data;
+};
+const axiosGetBusInfoD9 = async () => {
+   const data = await Api.getBusInfoD9();
+   return data;
+};
+const axiosGetBusInfoDS = async () => {
+   const data = await Api.getBusInfoDS();
+   return data;
+};
+const axiosGetBusInfoGangwon_do = async () => {
    const data = await Api.getBusInfoGangwon_do();
    return data;
 };
 const axiosGetMovieList = async () => {
    const data = await Api.getMovieList();
    return data;
-   // 여기 리턴값중 movieCd를 통해서 상세 데이터를 가져올수 있다
 };
 const axiosGetDayMovieRanks = async () => {
    const data = await Api.getDayMoviesRanks();
@@ -74,4 +105,15 @@ const axiosGetMoviePeople = async (pagenum: number) => {
    return data;
    // peopleCd 를 통해서 영화인 데이터를 자세히 볼수 있다
 };
-export { axiosGetMovieList, axiosGetDayMovieRanks, axiosGetMoviePeople, axiosGetWeekMoviesRanks, axiosGetMovieMaker };
+export {
+   axiosGetMovieList,
+   axiosGetDayMovieRanks,
+   axiosGetMoviePeople,
+   axiosGetWeekMoviesRanks,
+   axiosGetMovieMaker,
+   axiosGetBusInfoGangwon_do,
+   axiosGetBusInfoGGD,
+   axiosGetBusInfoGSMD,
+   axiosGetBusInfoD9,
+   axiosGetBusInfoDS,
+};
