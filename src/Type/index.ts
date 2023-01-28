@@ -57,4 +57,4 @@ interface BusData {
    하차: string;
 }
 
-export { BusConfig, MovieListConfig, BoxOfficeDay, PeopleConfig, MakerConfig, DayConfig, WeekConfig };
+export { BusConfig, BusData, MovieListConfig, BoxOfficeDay, PeopleConfig, MakerConfig, DayConfig, WeekConfig };
