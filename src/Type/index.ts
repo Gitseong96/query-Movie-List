@@ -41,7 +41,7 @@ interface BoxOfficeWeek {
 }
 interface BusConfig {
    currentCount: number;
-   data: any[];
+   data: BusData;
    matchCount: number;
    page: number;
    perPage: number;
