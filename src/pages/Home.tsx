@@ -1,15 +1,29 @@
 import { Link } from 'react-router-dom';
-import DayMovieRanks from 'components/DayMovieRanks';
-import WeekMovieRanks from 'components/WeekMoveRanks';
-import { useBuseData } from 'components/WeekMoveRanks/useWeekMovieRanks';
+
+import {
+   usePrefetchBusGWD,
+   usePrefetchBusGGD,
+   usePrefetchBusGSND,
+   usePrefetchBusD9,
+   usePrefetchBusDS,
+} from 'components/BUS/useBusRanks';
+import { usePrefetchDayRanks } from 'components/DayMovieRanks/useDayMovieRank';
+import { usePrefetchWeekRanks } from 'components/WeekMoveRanks/useWeekMovieRanks';
+
 const Home = () => {
+   usePrefetchBusGWD();
+   usePrefetchDayRanks();
+   usePrefetchWeekRanks();
+   usePrefetchBusGGD();
+   usePrefetchBusGSND();
+   usePrefetchBusD9();
+   usePrefetchBusDS();
    return (
       <>
+         <h1>랜덤 순위</h1>
          <Link to="/Ranks">
-            <button>1</button>
+            <button>ㄲ</button>
          </Link>
-         <DayMovieRanks />
-         <WeekMovieRanks />
       </>
    );
 };

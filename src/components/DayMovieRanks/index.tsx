@@ -1,12 +1,20 @@
 import Ranks from 'components/atom/Ranks';
-import { TrStyle, TdStyle } from 'components/atom/Ranks';
-import { useDayRanks } from 'components/DayMovieRanks/useDayMovieRank';
+import { queryClient } from 'Reacy-Query/queryClient';
 import styled from 'styled-components';
-
+import { queryKeysBus, queryKeysMovie } from 'Reacy-Query/queryKeys';
+import { DayConfig } from 'Type';
 function DayMovieRanks() {
-   const dayRanks = useDayRanks();
-   const { data, status } = dayRanks;
-   if (status === 'loading') return <div>Loading....</div>;
+   // const dayRanks = useDayRanks();
+   // const { data, status } = dayRanks;
+   // if (status === 'loading') return <div>Loading....</div>;
+   // const query = quertCache.find([queryKeysBus.busGWD]);
+   const query: DayConfig = queryClient.getQueryData([queryKeysMovie.movieDayRanks]);
+   const query1: any = queryClient.getQueriesData([queryKeysBus.busD9]);
+   const query2: any = queryClient.getQueriesData([queryKeysBus.busGGD]);
+   // console.log(query);
+   console.log(query1[0][1].data[0]['승차']);
+   console.log(query1);
+   // console.log(query2);
    return (
       <TableStyle>
          <THEAD>
@@ -29,7 +37,7 @@ function DayMovieRanks() {
             </TR>
          </THEAD>
          <tbody>
-            {data?.boxOfficeResult.dailyBoxOfficeList.map((movie: any) => {
+            {query?.boxOfficeResult.dailyBoxOfficeList.map((movie: any) => {
                return (
                   <Ranks
                      key={movie.rank}
@@ -77,3 +85,4 @@ const H1 = styled.h1`
    color: #185875;
 `;
 const THEAD = styled.thead``;
+export { TableStyle, TH, TR, H1, THEAD };

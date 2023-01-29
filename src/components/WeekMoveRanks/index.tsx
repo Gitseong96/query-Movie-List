@@ -1,12 +1,15 @@
 import { useWeekRanks } from 'components/WeekMoveRanks/useWeekMovieRanks';
 import Ranks from 'components/atom/Ranks';
 import styled from 'styled-components';
-
+import { queryKeysMovie } from 'Reacy-Query/queryKeys';
+import { WeekConfig } from 'Type';
+import { queryClient } from 'Reacy-Query/queryClient';
 function WeekMovieRanks() {
-   const weekRanks = useWeekRanks();
-   const { data, status } = weekRanks;
+   // const weekRanks = useWeekRanks();
+   // const { data, status } = weekRanks;
+   // if (status === 'loading') return <div>Loading....</div>;
+   const query: WeekConfig = queryClient.getQueryData([queryKeysMovie.movieWeekRanks]);
 
-   if (status === 'loading') return <div>Loading....</div>;
    return (
       <TableStyle>
          <THEAD>
@@ -29,7 +32,7 @@ function WeekMovieRanks() {
             </TR>
          </THEAD>
          <tbody>
-            {data?.boxOfficeResult.weeklyBoxOfficeList.map((movie: any) => {
+            {query?.boxOfficeResult.weeklyBoxOfficeList.map((movie: any) => {
                return (
                   <Ranks
                      key={movie.rank}
