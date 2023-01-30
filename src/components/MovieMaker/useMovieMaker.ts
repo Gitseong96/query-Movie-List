@@ -1,6 +1,6 @@
 import { axiosGetMovieMaker } from 'API';
 import { useQuery } from '@tanstack/react-query';
-import { queryKeys } from 'Reacy-Query/queryKeys';
+import { queryKeysMovie } from 'Reacy-Query/queryKeys';
 import { MakerConfig } from 'Type';
 
 interface UseMovieMaker {
@@ -8,6 +8,6 @@ interface UseMovieMaker {
    status: string;
 }
 export const useMovieMaker = (): UseMovieMaker => {
-   const { data, status } = useQuery([queryKeys.movieMaker], axiosGetMovieMaker);
+   const { data, status } = useQuery([queryKeysMovie.movieMaker], axiosGetMovieMaker);
    return { data, status };
 };

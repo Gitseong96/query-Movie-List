@@ -1,20 +1,10 @@
 import Ranks from 'components/atom/Ranks';
 import { queryClient } from 'Reacy-Query/queryClient';
 import styled from 'styled-components';
-import { queryKeysBus, queryKeysMovie } from 'Reacy-Query/queryKeys';
+import { queryKeysMovie } from 'Reacy-Query/queryKeys';
 import { DayConfig } from 'Type';
 function DayMovieRanks() {
-   // const dayRanks = useDayRanks();
-   // const { data, status } = dayRanks;
-   // if (status === 'loading') return <div>Loading....</div>;
-   // const query = quertCache.find([queryKeysBus.busGWD]);
    const query: DayConfig = queryClient.getQueryData([queryKeysMovie.movieDayRanks]);
-   const query1: any = queryClient.getQueriesData([queryKeysBus.busD9]);
-   const query2: any = queryClient.getQueriesData([queryKeysBus.busGGD]);
-   // console.log(query);
-   console.log(query1[0][1].data[0]['승차']);
-   console.log(query1);
-   // console.log(query2);
    return (
       <TableStyle>
          <THEAD>

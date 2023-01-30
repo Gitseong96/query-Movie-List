@@ -1,7 +1,6 @@
 import BusRanks from 'components/atom/BusRanks';
 import { queryClient } from 'Reacy-Query/queryClient';
 import { queryKeysBus } from 'Reacy-Query/queryKeys';
-import { BusConfig } from 'Type';
 import { TableStyle, TH, TR, H1, THEAD } from 'components/DayMovieRanks';
 function BusRankGWD() {
    const query: any = queryClient.getQueriesData([queryKeysBus.busGWD]);
@@ -45,5 +44,4 @@ function BusRankGWD() {
    );
 }
 
-// console.log(query1[0][1].data[0]['승차']);
 export default BusRankGWD;

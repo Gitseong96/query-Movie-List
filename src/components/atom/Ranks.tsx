@@ -7,7 +7,7 @@ interface CardPros {
    audiAcc: string;
    movieNm: string;
 }
-// eslint-disable-next-line react/function-component-definition
+
 const Ranks: React.FC<CardPros> = props => {
    return (
       <TrStyle>
@@ -27,8 +27,6 @@ const Ranks: React.FC<CardPros> = props => {
 };
 
 export default Ranks;
-
-// "▲" : "▼"
 
 export const TrStyle = styled.tr`
    background-color: #323c50;

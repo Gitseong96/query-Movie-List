@@ -1,6 +1,6 @@
 import { axiosGetMovieList } from 'API';
 import { useQuery } from '@tanstack/react-query';
-import { queryKeys } from 'Reacy-Query/queryKeys';
+import { queryKeysMovie } from 'Reacy-Query/queryKeys';
 import { MovieListConfig } from 'Type';
 interface UseMovieList {
    data: MovieListConfig;
@@ -8,6 +8,6 @@ interface UseMovieList {
 }
 
 export const useMovieList = (): UseMovieList => {
-   const { data, status } = useQuery([queryKeys.movieList], axiosGetMovieList);
+   const { data, status } = useQuery([queryKeysMovie.movieList], axiosGetMovieList);
    return { data, status };
 };

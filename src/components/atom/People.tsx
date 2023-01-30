@@ -16,5 +16,3 @@ const People: React.FC<PeopleProps> = props => {
 };
 
 export default People;
-
-// people은 페이지네이션 구현

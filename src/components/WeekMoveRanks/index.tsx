@@ -5,9 +5,6 @@ import { queryKeysMovie } from 'Reacy-Query/queryKeys';
 import { WeekConfig } from 'Type';
 import { queryClient } from 'Reacy-Query/queryClient';
 function WeekMovieRanks() {
-   // const weekRanks = useWeekRanks();
-   // const { data, status } = weekRanks;
-   // if (status === 'loading') return <div>Loading....</div>;
    const query: WeekConfig = queryClient.getQueryData([queryKeysMovie.movieWeekRanks]);
 
    return (

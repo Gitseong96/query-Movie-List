@@ -19,6 +19,5 @@ const BusRanks: React.FC<CardPros> = props => {
       </TrStyle>
    );
 };
-// console.log(query1[0][1].data[0]['승차']);
 
 export default BusRanks;
