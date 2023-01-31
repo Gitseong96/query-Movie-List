@@ -1,7 +1,7 @@
 import BusRanks from 'components/atom/BusRanks';
 import { queryClient } from 'Reacy-Query/queryClient';
 import { queryKeysBus } from 'Reacy-Query/queryKeys';
-import { TableStyle, TH, TR, H1, THEAD } from 'components/DayMovieRanks';
+import { TrStyle, H1, THEAD, TableStyle, TdStyle, TR, TH } from 'style/tableStyle';
 function BusRankDS() {
    const query: any = queryClient.getQueriesData([queryKeysBus.busDS]);
 

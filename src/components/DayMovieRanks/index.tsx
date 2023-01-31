@@ -3,6 +3,7 @@ import { queryClient } from 'Reacy-Query/queryClient';
 import styled from 'styled-components';
 import { queryKeysMovie } from 'Reacy-Query/queryKeys';
 import { DayConfig } from 'Type';
+import { TrStyle, H1, THEAD, TableStyle, TdStyle, TR, TH } from 'style/tableStyle';
 function DayMovieRanks() {
    const query: DayConfig = queryClient.getQueryData([queryKeysMovie.movieDayRanks]);
    return (
@@ -45,34 +46,3 @@ function DayMovieRanks() {
 }
 
 export default DayMovieRanks;
-
-const TableStyle = styled.table`
-   text-align: left;
-   overflow: hidden;
-   width: 80%;
-   margin: 0 auto;
-   display: table;
-   padding: 0 0 8em 0;
-`;
-const TH = styled.th`
-   padding-bottom: 2%;
-   padding-top: 2%;
-   padding-left: 2%;
-   background-color: #1f2739;
-`;
-const TR = styled.tr`
-   /* &: nth-child(odd) {
-      background-color: #323c50;
-   }
-   &: nth-child(even) {
-      background-color: #1f2739;
-   } */
-`;
-const H1 = styled.h1`
-   font-weight: bold;
-   font-size: 1em;
-   text-align: left;
-   color: #185875;
-`;
-const THEAD = styled.thead``;
-export { TableStyle, TH, TR, H1, THEAD };
