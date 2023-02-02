@@ -17,7 +17,8 @@
       "isolatedModules": false,
       "noEmit": true,
       "jsx": "react-jsx",
-      "strictNullChecks": false
+      "strictNullChecks": false,
+      "types": ["kakao.maps.d.ts"]
    },
    "include": ["src"]
 }
