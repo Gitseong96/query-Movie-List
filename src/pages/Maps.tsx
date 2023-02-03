@@ -36,7 +36,7 @@ export default function Maps() {
       return Number(`${newMagnitude}e${+newExponent + exp}`);
    };
    const pointData = () => Math.random();
-   const validation = () => {
+   const latValidation = () => {
       let latData = lat();
       let lngData = lng();
       let Randompoint = pointData();
@@ -44,7 +44,21 @@ export default function Maps() {
       let result = latData + data;
       console.log(result);
       if (!(result > 33.16955 && result < 38.599814)) {
-         validation();
+         latValidation();
+      } else {
+         // state에 저장 하나
+         return result;
+      }
+   };
+   const lngValidation = () => {
+      let latData = lat();
+      let lngData = lng();
+      let Randompoint = pointData();
+      let data = pointRandom(Randompoint, -6);
+      let result = latData + data;
+      console.log(result);
+      if (!(result > 125.20276 && result < 130.939545)) {
+         latValidation();
       } else {
          // state에 저장 하나
          return result;
@@ -56,7 +70,7 @@ export default function Maps() {
       let result1;
       let result2;
       let result3;
-      console.log(validation());
+      console.log(latValidation());
       result = lat();
       result1 = lng();
       result3 = latData();
