@@ -1,3 +1,6 @@
+const latData = () => Math.random();
+const lat = () => Math.floor(Math.random() * (38 - 33 + 1) + 33);
+const lng = () => Math.floor(Math.random() * (130 - 125 + 1) + 125);
 const pointRandom = (value: number, exp: number) => {
    exp = Number(exp);
    value = Number(value);
@@ -13,21 +16,27 @@ const pointRandom = (value: number, exp: number) => {
    return Number(`${newMagnitude}e${+newExponent + exp}`);
 };
 const pointData = () => Math.random();
-const lat = () => Math.floor(Math.random() * (38 - 33 + 1) + 33);
-const lng = () => Math.floor(Math.random() * (130 - 125 + 1) + 125);
-
-const validation = () => {
+const latValidation = () => {
    let latData = lat();
-   let lngData = lng();
    let Randompoint = pointData();
    let data = pointRandom(Randompoint, -6);
    let result = latData + data;
    if (!(result > 33.16955 && result < 38.599814)) {
-      validation();
+      latValidation();
    } else {
-      result = lngData;
-      // state에 저장 하나
+      return result;
    }
 };
-//   33.169550 ~38.599814
-//  125.202760~130.939545
+const lngValidation = () => {
+   let latData = lng();
+   let Randompoint = pointData();
+   let data = pointRandom(Randompoint, -6);
+   let result = latData + data;
+   if (!(result > 125.20276 && result < 130.939545)) {
+      latValidation();
+   } else {
+      return result;
+   }
+};
+
+export { latValidation, lngValidation };

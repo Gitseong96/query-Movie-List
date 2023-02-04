@@ -6,7 +6,7 @@ import './App.css';
 import Home from 'pages/Home';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import GlobalStyle from 'style/globalStyle';
-import Maps from 'pages/Maps';
+import RandomMaps from 'pages/RandomMaps';
 function App() {
    return (
       <QueryClientProvider client={queryClient}>
@@ -16,7 +16,7 @@ function App() {
                <Routes>
                   <Route path="/" element={<Home />}></Route>
                   <Route path="/Ranks" element={<RandomRanks />}></Route>
-                  <Route path="/Maps" element={<Maps />}></Route>
+                  <Route path="/Maps" element={<RandomMaps />}></Route>
                </Routes>
             </BrowserRouter>
             <ReactQueryDevtools />
