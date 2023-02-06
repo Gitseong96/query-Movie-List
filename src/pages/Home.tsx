@@ -28,10 +28,6 @@ const Home = () => {
                <ButtonStyle>랜던 좌표찍기</ButtonStyle>
             </Link>
          </ButtonBox>
-         <ButtonBox>
-            <ButtonStyle>로그인하기</ButtonStyle>
-            <ButtonStyle>구상중</ButtonStyle>
-         </ButtonBox>
       </Container>
    );
 };

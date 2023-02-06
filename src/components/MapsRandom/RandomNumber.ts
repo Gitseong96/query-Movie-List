@@ -1,4 +1,3 @@
-const latData = () => Math.random();
 const lat = () => Math.floor(Math.random() * (38 - 33 + 1) + 33);
 const lng = () => Math.floor(Math.random() * (130 - 125 + 1) + 125);
 const pointRandom = (value: number, exp: number) => {
@@ -11,7 +10,6 @@ const pointRandom = (value: number, exp: number) => {
    }
    const magnitude = value.toString().split('e');
    const adjustedValue = Math.round(Number(`${magnitude}e${0 - exp}`));
-   // Shift back
    const [newMagnitude, newExponent = 0] = adjustedValue.toString().split('e');
    return Number(`${newMagnitude}e${+newExponent + exp}`);
 };
@@ -21,10 +19,10 @@ const latValidation = () => {
    let Randompoint = pointData();
    let data = pointRandom(Randompoint, -6);
    let result = latData + data;
-   if (!(result > 33.16955 && result < 38.599814)) {
-      latValidation();
-   } else {
+   if (result > 34.287404 && result < 38.327321) {
       return result;
+   } else {
+      latValidation();
    }
 };
 const lngValidation = () => {
@@ -32,10 +30,10 @@ const lngValidation = () => {
    let Randompoint = pointData();
    let data = pointRandom(Randompoint, -6);
    let result = latData + data;
-   if (!(result > 125.20276 && result < 130.939545)) {
-      latValidation();
-   } else {
+   if (result > 126.143154 && result < 129.597229) {
       return result;
+   } else {
+      lngValidation();
    }
 };
 
