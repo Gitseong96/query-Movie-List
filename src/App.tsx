@@ -7,6 +7,7 @@ import Home from 'pages/Home';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import GlobalStyle from 'style/globalStyle';
 import RandomMaps from 'pages/RandomMaps';
+
 function App() {
    return (
       <QueryClientProvider client={queryClient}>

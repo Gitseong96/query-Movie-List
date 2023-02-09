@@ -9,6 +9,14 @@ const GlobalStyle = createGlobalStyle`
     table{
         width:80%
     }
+    a{
+        text-decoration: none;
+    }
+    button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 `;
 
 export default GlobalStyle;

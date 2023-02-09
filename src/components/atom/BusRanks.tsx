@@ -1,5 +1,5 @@
-import { TrStyle, TdStyle } from './Ranks';
-
+// import { TrStyle, TdStyle } from './Ranks';
+import { TrStyle, H1, THEAD, TableStyle, TdStyle, TR, TH } from 'style/tableStyle';
 interface CardPros {
    rank: number;
    map: string;

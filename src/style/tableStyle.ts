@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { color } from './theme';
+import { colorFn } from './randomColor';
 
 const TrStyle = styled.tr`
    background-color: #323c50;
@@ -6,15 +8,16 @@ const TrStyle = styled.tr`
 const TdStyle = styled.th`
    font-weight: normal;
    font-size: 1em;
-   -webkit-box-shadow: 0 2px 2px -2px #0e1119;
-   -moz-box-shadow: 0 2px 2px -2px #0e1119;
-   box-shadow: 0 2px 2px -2px #0e1119;
+   /* -webkit-box-shadow: 0 2px 2px -2px ${color.honey_suckle_3};
+   -moz-box-shadow: 0 2px 2px -2px ${color.honey_suckle_3};
+   box-shadow: 0 2px 2px -2px ${color.honey_suckle_3}; */
+   background-color: ${color.very_peri_3};
    padding-bottom: 2%;
    padding-top: 2%;
    padding-left: 2%;
 
    &:hover {
-      background-color: #fff842;
+      background-color: ${color.very_peri_2};
       color: #403e10;
       font-weight: bold;
       box-shadow: #7f7c21 -1px 1px, #7f7c21 -2px 2px, #7f7c21 -3px 3px, #7f7c21 -4px 4px, #7f7c21 -5px 5px,
@@ -38,21 +41,21 @@ const TH = styled.th`
    padding-bottom: 2%;
    padding-top: 2%;
    padding-left: 2%;
-   background-color: #1f2739;
+   background-color: ${color.very_peri_2};
 `;
 const TR = styled.tr`
    /* &: nth-child(odd) {
-      background-color: #323c50;
+      background-color: ${color.honey_suckle_2};
    }
    &: nth-child(even) {
-      background-color: #1f2739;
+      background-color: ${color.honey_suckle_3};
    } */
 `;
 const H1 = styled.h1`
    font-weight: bold;
    font-size: 1em;
    text-align: left;
-   color: #185875;
+   color: black;
 `;
 const THEAD = styled.thead``;
 

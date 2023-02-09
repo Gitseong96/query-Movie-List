@@ -1,7 +1,8 @@
 const size = {
-   xs: '576px',
-   sm: '768px',
-   md: '992px',
+   xs: '400px',
+   s: '576px',
+   m: '768px',
+   l: '992px',
    xl: '1200px',
 };
 
@@ -24,7 +25,10 @@ const color = {
    honey_suckle_3: '#ff819e',
 };
 const theme = {
-   mobile: `screen and (max-width:${size.sm})`,
-   tablet: `screen and (max-width:${size.md})`,
-   laptop: `screen and (max-width:${size.xl})`,
+   mobile_S: `screen and (max-width:${size.xs})`,
+   mobile_M: `screen and (max-width:${size.s})`,
+   medium: `screen and (max-width:${size.m})`,
+   large: `screen and (max-width:${size.l})`,
+   xlarge: `screen and (max-width:${size.xl})`,
 };
+export { theme, color };
