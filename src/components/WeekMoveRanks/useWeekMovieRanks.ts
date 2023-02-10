@@ -6,7 +6,6 @@ export const useWeekRanks = () => {
    const { data, status } = useQuery([queryKeysMovie.movieWeekRanks], axiosGetWeekMoviesRanks);
    return { data, status };
 };
-
 export const usePrefetchWeekRanks = (): void => {
    const queryClient = useQueryClient();
    queryClient.prefetchQuery([queryKeysMovie.movieWeekRanks], axiosGetWeekMoviesRanks);

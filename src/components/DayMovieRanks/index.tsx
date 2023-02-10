@@ -11,19 +11,19 @@ function DayMovieRanks() {
          <THEAD>
             <TR>
                <TH>
-                  <H1>Rank</H1>
+                  <H1>순위</H1>
                </TH>
                <TH>
-                  <H1>mocieNm</H1>
+                  <H1>영화이름</H1>
                </TH>
                <TH>
-                  <H1>audiAcc</H1>
+                  <H1>누적관객</H1>
                </TH>
                <TH>
-                  <H1>openDt</H1>
+                  <H1>개봉일</H1>
                </TH>
                <TH>
-                  <H1>rankInten</H1>
+                  <H1>업다운</H1>
                </TH>
             </TR>
          </THEAD>

@@ -8,14 +8,18 @@ import { MovieListConfig, PeopleConfig, MakerConfig, DayConfig, WeekConfig, BusC
 // const day = TargetDate.getDate() - 1;
 
 // const targetData = year.toString() + month.toString() + day.toString();
-
-// searchDailyBoxOfficeList.json?key=bbc4c623fc0a820e7436db118bc1d95c&targetDt=20221123
-
+const todayDate = () => {
+   const TargetDate = new Date();
+   const year = TargetDate.getFullYear().toString();
+   const month = (TargetDate.getMonth() + 1).toString();
+   const day = (TargetDate.getDate() - 1).toString();
+   return year + month + day;
+};
 const MOVIE_API = 'bbc4c623fc0a820e7436db118bc1d95c';
 const open_API = 'kjHcfFZ4qKx5Ie3UIJLQgWpRvMUtK3oAZu4VTDhUGA9%2FNnNWnnAw9oAvLMtKIDWUftzrkzytDkgD6A%2Fx0aB2IA%3D%3D';
 const baseUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/`;
 
-const targetDt = '20221201';
+const targetDt = '20230202';
 
 const instanceMovie = axios.create({
    baseURL: 'https://www.kobis.or.kr/kobisopenapi/webservice/rest',
