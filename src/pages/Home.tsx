@@ -10,8 +10,7 @@ import {
 import { usePrefetchDayRanks } from 'components/DayMovieRanks/useDayMovieRank';
 import { usePrefetchWeekRanks } from 'components/WeekMoveRanks/useWeekMovieRanks';
 import { color } from 'style/theme';
-import { colorFn } from 'style/randomColor';
-import { useState } from 'react';
+
 const Home = () => {
    usePrefetchBusGWD();
    usePrefetchDayRanks();
@@ -20,7 +19,6 @@ const Home = () => {
    usePrefetchBusGSND();
    usePrefetchBusD9();
    usePrefetchBusDS();
-   // const RandomColorNumber = () => Math.floor(Math.random() * (11 - 0 + 1) + 0);
 
    return (
       <Container>

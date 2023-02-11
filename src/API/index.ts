@@ -17,7 +17,6 @@ const todayDate = () => {
 };
 const MOVIE_API = 'bbc4c623fc0a820e7436db118bc1d95c';
 const open_API = 'kjHcfFZ4qKx5Ie3UIJLQgWpRvMUtK3oAZu4VTDhUGA9%2FNnNWnnAw9oAvLMtKIDWUftzrkzytDkgD6A%2Fx0aB2IA%3D%3D';
-const baseUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/`;
 
 const targetDt = '20230202';
 
